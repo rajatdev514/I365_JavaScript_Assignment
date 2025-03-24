@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management Application</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <h1>📝 Task Manager Pro</h1>
+        <p>Organize your work efficiently</p>
+      </header>
+
+      <div class="main-content">
+        <div class="task-form-container">
+          <h2>➕ Add New Task</h2>
+          <div class="task-form">
+            <div class="form-group">
+              <label for="your-name"
+                ><i class="fas fa-user"></i> Your Name</label
+              >
+              <input
+                type="text"
+                id="your-name"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="reporting-manager"
+                ><i class="fas fa-user-tie"></i> Reporting Manager</label
+              >
+              <input
+                type="text"
+                id="reporting-manager"
+                placeholder="Manager's name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="task-name"
+                ><i class="fas fa-tasks"></i> Task Name</label
+              >
+              <input
+                type="text"
+                id="task-name"
+                placeholder="What needs to be done?"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="task-description"
+                ><i class="fas fa-align-left"></i> Description</label
+              >
+              <textarea
+                id="task-description"
+                placeholder="Details about the task..."
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="task-due-date"
+                ><i class="far fa-calendar-alt"></i> Due Date</label
+              >
+              <input type="date" id="task-due-date" />
+            </div>
+            <button id="add-task-btn" class="primary-btn">
+              <i class="fas fa-plus-circle"></i> Add Task
+            </button>
+          </div>
+        </div>
+
+        <div class="tasks-container">
+          <div class="filters">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                id="search-task"
+                placeholder="Search tasks..."
+              />
+            </div>
+            <select id="filter-status">
+              <option value="all">All Tasks</option>
+              <option value="pending">⏳ Pending</option>
+              <option value="completed">✅ Completed</option>
+            </select>
+          </div>
+
+          <div class="stats">
+            <span class="total-tasks"
+              >📊 Total: <span id="total-count">0</span></span
+            >
+            <span class="pending-tasks"
+              >⏳ Pending: <span id="pending-count">0</span></span
+            >
+            <span class="completed-tasks"
+              >✅ Completed: <span id="completed-count">0</span></span
+            >
+          </div>
+
+          <ul id="task-list"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
